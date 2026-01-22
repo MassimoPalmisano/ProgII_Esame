@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -Wall -g
-DESTINAZIONE = Size
-ORIGINE = Sizes.cpp
+DEST = Size
+ORIG = Sizes.cpp
 
 run: $(ORIGINE)
 	$(CC) $(CFLAGS) $^ -o $(DESTINAZIONE).exe
