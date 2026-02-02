@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -Wall -g
-DEST = Esercizio
-ORIG = Esercizio.cpp
+DEST = Stringhe
+ORIG = Stringhe.cpp
 
 run: $(ORIG)
 	$(CC) $(CFLAGS) $^ -o $(DEST).exe
