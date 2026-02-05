@@ -7,4 +7,4 @@ run: $(ORIG)
 	$(CC) $(CFLAGS) $^ -o $(DEST).exe
 
 clean: 
-	rm -f $(DEST).exe
+	rm *.exe
