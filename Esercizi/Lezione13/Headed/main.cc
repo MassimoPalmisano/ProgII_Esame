@@ -13,8 +13,9 @@
 
 using namespace std ;
 
-#include "liste-tipo.h"
+
 #include "fun-app.h"
+
 
 
 /**********************************************/
@@ -23,7 +24,7 @@ using namespace std ;
 int main()
 {
     int n;
-    char v[51];
+    int num;
     int scelta;
     lista testa=NULL;
     elem* ris;
@@ -43,14 +44,14 @@ int main()
     		testa = crealista(n);
     		break;
     		case 2: cout<<"Inserire il valore da cancellare:"<<endl;
-    		cin>>v;
-    		testa=cancella(testa,v);
+    		cin>>num;
+    		testa=cancella(testa,num);
     		break;
     		case 3: stampalista(testa);
     		break;
     		case 4: cout << "Valore da cercare"<<endl;
-    		cin>>v;
-    		ris=search(testa,v);
+    		cin>>num;
+    		ris=search(testa,num);
     		if(ris!=NULL)
     			naviga(ris);
 

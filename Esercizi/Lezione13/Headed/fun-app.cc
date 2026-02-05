@@ -14,8 +14,6 @@
 using namespace std ;
 
 
-#include "liste-tipo.h"
-#include "liste.h"
 #include "fun-app.h"
 
 
@@ -38,18 +36,18 @@ void stampalista(lista p)
 
 lista crealista(int n)
 {
-	char url[80];
+	int num;
       lista testa = NULL ;
       for (int i = 1 ; i <= n ; i++) {
-          cout<<"URL "<<i<<": " ;
-          cin>>url;
-		  elem* p = new_elem(url);
+          cout<<"num "<<i<<": " ;
+          cin>>num;
+		  elem* p = new_elem(num);
           testa=insert_elem(testa,p);
       }
       return testa ;
 }
 
-lista cancella(lista l, char* v){
+lista cancella(lista l, tipo_inf v){
 	elem* e;
 	while((e=search(l,v))!=NULL){
 		cout<<"Cancello un elemento con valore "<<v<<endl;

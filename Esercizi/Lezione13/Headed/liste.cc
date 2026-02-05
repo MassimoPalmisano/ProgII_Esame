@@ -14,7 +14,6 @@
 using namespace std ;
 
 
-#include "liste-tipo.h"
 #include "liste.h"
 
 
@@ -23,27 +22,46 @@ using namespace std ;
 /* DEFINIZIONE MODULO "liste" */
 /*******************************/
 
-lista tail(lista p){return p->pun;}
-lista prev(lista p){return p->prev;}
+tipo_inf head(lista p){return p->inf;}
+lista tail(lista p){return p->punt;}
+lista prev(lista p){return p->prec;}
 
 lista insert_elem(lista l, elem* e){
-	e->pun=l;
+	e->punt=l;
 	if(l!=NULL)
-		l->prev=e;
-	e->prev=NULL;
+		l->prec=e;
+	e->prec=NULL;
 	return e;
 }
 
 lista delete_elem(lista l, elem* e){
 
 		if(l==e)
-			l=e->pun; // e è la testa della lista
+			l=e->punt; // e è la testa della lista
 		else // e non è la testa della lista
-			(e->prev)->pun = e->pun;
-		if(e->pun!=NULL)
-			(e->pun)->prev=e->prev;
+			(e->prec)->punt = e->punt;
+		if(e->punt!=NULL)
+			(e->punt)->prec=e->prec;
 		delete e;
 		return l;
+}
+
+elem* new_elem(tipo_inf inf){
+	elem* p = new elem;
+	p->inf = copy(inf);
+	p->punt = p->prec = NULL;
+	
+	return p;
+}
+
+elem* search(lista p, tipo_inf v){
+	while(p != NULL){
+		if(compare(p->inf, v) == 0)
+			return p;
+		else 
+			p = tail(p);
+	}
+	return NULL;
 }
 
 
